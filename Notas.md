@@ -276,6 +276,39 @@ No existe como comando oficial. Generalmente se refiere a clonar o hacer fetch /
 
 ---
 
+# 🏷️ Alias en Git
+
+## git alias
+Permite crear atajos personalizados para comandos de Git, facilitando y agilizando su uso.
+
+### Crear un alias temporal (solo para la sesión actual):
+```bash
+git config alias.co checkout
+git config alias.st status
+git config alias.ci commit
+git config alias.br branch
+```
+Ahora puedes usar, por ejemplo, `git co main` en vez de `git checkout main`.
+
+### Crear un alias global (para todos tus repositorios):
+```bash
+git config --global alias.lg "log --oneline --graph --decorate --all"
+```
+Esto te permite ejecutar `git lg` para ver un historial compacto y visual de los commits.
+
+### Ver todos tus alias configurados:
+```bash
+git config --get-regexp alias
+```
+
+### Ejemplo de alias útiles:
+- `git config --global alias.last "log -1 HEAD"`
+- `git config --global alias.unstage "reset HEAD --"`
+- `git config --global alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"`
+
+> Los alias pueden ser combinaciones de comandos y opciones, pero no pueden reemplazar comandos que requieren argumentos complejos o subcomandos interactivos.
+
+
 # ✅ Flujo de Trabajo Recomendado
 
 ```bash
