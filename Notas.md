@@ -1,245 +1,284 @@
-📌 COMANDOS BÁSICOS Y FUNDAMENTALES
-🔹 git config
+# 📌 Comandos Básicos y Fundamentales
+
+## git config
 Configura tu identidad y preferencias de Git.
 
-Uso común:
-
-bash
-Copiar
-Editar
+```bash
 git config --global user.name "Tu Nombre"
 git config --global user.email "tu@email.com"
-Usa --global para que aplique a todos tus repos.
-
+```
+Usa `--global` para que aplique a todos tus repos.  
 También puedes configurar el editor, colores, alias, etc.
 
-🔹 git init
+---
+
+## git init
 Crea un nuevo repositorio Git en el directorio actual.
 
-bash
-Copiar
-Editar
+```bash
 git init
+```
 Úsalo para empezar a usar Git en un proyecto local.
 
-🔹 git clone
+---
+
+## git clone
 Clona un repositorio remoto a tu máquina local.
 
-bash
-Copiar
-Editar
+```bash
 git clone https://github.com/usuario/repositorio.git
+```
 Crea una copia completa del repositorio y su historial.
 
-🔹 git add
+---
+
+## git add
 Agrega archivos al área de preparación (staging area).
 
-bash
-Copiar
-Editar
+```bash
 git add archivo.txt
 git add .   # agrega todos los archivos modificados
-Prepara los archivos para ser guardados con git commit.
+```
+Prepara los archivos para ser guardados con `git commit`.
 
-🔹 git commit
+---
+
+## git commit
 Guarda los cambios del área de preparación al historial del proyecto.
 
-bash
-Copiar
-Editar
+```bash
 git commit -m "Mensaje del commit"
+```
 Es como tomar una "foto" del estado del proyecto.
 
-🔹 git status
+---
+
+## git status
 Muestra el estado del repositorio: qué está modificado, sin seguir, listo para commit, etc.
 
-bash
-Copiar
-Editar
+```bash
 git status
-🔹 git log
+```
+
+---
+
+## git log
 Muestra el historial de commits.
 
-bash
-Copiar
-Editar
+```bash
 git log
-🌿 RAMAS Y FLUJOS
-🔹 git branch
+```
+
+# 🌿 Ramas y Flujos
+
+## git branch
 Muestra las ramas existentes o crea una nueva.
 
-bash
-Copiar
-Editar
+```bash
 git branch          # muestra ramas
 git branch nueva-rama  # crea rama
-🔹 git checkout
+```
+
+---
+
+## git checkout
 Cambia de rama o revierte archivos.
 
-bash
-Copiar
-Editar
+```bash
 git checkout main          # cambia a rama main
 git checkout -b nueva      # crea y cambia a nueva rama
-🔹 git switch (moderno)
+```
+
+---
+
+## git switch (moderno)
 Mejor alternativa a checkout para cambiar de rama.
 
-bash
-Copiar
-Editar
+```bash
 git switch main
 git switch -c nueva
-🔹 git merge
+```
+
+---
+
+## git merge
 Combina una rama con la actual.
 
-bash
-Copiar
-Editar
+```bash
 git merge feature-1
+```
 Se usa para integrar cambios de otras ramas.
 
-🔹 git rebase
+---
+
+## git rebase
 Reaplica commits de una rama sobre otra (reorganiza la historia).
 
-bash
-Copiar
-Editar
+```bash
 git rebase main
+```
 Útil para limpiar el historial antes de integrar ramas.
 
-🔹 git cherry-pick
+---
+
+## git cherry-pick
 Aplica un commit específico de otra rama en la actual.
 
-bash
-Copiar
-Editar
+```bash
 git cherry-pick abc1234
+```
 Ideal para traer un cambio puntual sin hacer merge.
 
-🔹 git reset
+---
+
+## git reset
 Deshace commits o saca archivos del staging.
 
-bash
-Copiar
-Editar
+```bash
 git reset --soft HEAD~1    # deshace el último commit, mantiene cambios
 git reset archivo.txt       # quita archivo del staging
-🔹 git stash
+```
+
+---
+
+## git stash
 Guarda cambios sin hacer commit para trabajar en otra cosa.
 
-bash
-Copiar
-Editar
+```bash
 git stash
 git stash apply
+```
 Muy útil para guardar trabajo temporal sin hacer commit.
 
-🔹 git worktree
+---
+
+## git worktree
 Permite trabajar con varias ramas al mismo tiempo en directorios distintos.
 
-bash
-Copiar
-Editar
+```bash
 git worktree add ../otro-main main
+```
 Ideal para evitar cambiar de rama constantemente.
 
-🌐 REMOTOS Y SINCRONIZACIÓN
-🔹 git remote
+# 🌐 Remotos y Sincronización
+
+## git remote
 Muestra o gestiona conexiones a repositorios remotos.
 
-bash
-Copiar
-Editar
+```bash
 git remote -v
 git remote add origin https://github.com/user/repo.git
-🔹 git fetch
+```
+
+---
+
+## git fetch
 Descarga cambios del repositorio remoto sin mezclarlos.
 
-bash
-Copiar
-Editar
+```bash
 git fetch origin
-🔹 git pull
+```
+
+---
+
+## git pull
 Descarga y fusiona los cambios del remoto con tu rama actual.
 
-bash
-Copiar
-Editar
+```bash
 git pull origin main
-🔹 git push
+```
+
+---
+
+## git push
 Sube tus commits al repositorio remoto.
 
-bash
-Copiar
-Editar
+```bash
 git push origin main
-🔖 TAGS Y VERSIONADO
-🔹 git tag
+```
+
+# 🔖 Tags y Versionado
+
+## git tag
 Marca commits con nombres para indicar versiones.
 
-bash
-Copiar
-Editar
+```bash
 git tag v1.0
 git tag -a v1.0 -m "Versión estable"
 git push origin --tags
-⚙️ FLUJOS Y HERRAMIENTAS ESPECIALIZADAS
-🔹 git flow
+```
+
+# ⚙️ Flujos y Herramientas Especializadas
+
+## git flow
 Sistema de ramificación basado en convención: develop, feature/*, release/*, etc.
 
-bash
-Copiar
-Editar
+```bash
 git flow init
 git flow feature start nombre
 git flow release finish 1.0
+```
 Automático pero rígido; puedes dejar de usarlo cuando desees.
 
-🔹 git lfs
+---
+
+## git lfs
 Git Large File Storage: permite manejar archivos grandes.
 
-bash
-Copiar
-Editar
+```bash
 git lfs install
 git lfs track "*.psd"
-🔹 git diff
+```
+
+---
+
+## git diff
 Muestra diferencias entre archivos o commits.
 
-bash
-Copiar
-Editar
+```bash
 git diff
 git diff main develop
-🔹 git patch
+```
+
+---
+
+## git patch
 Aplica o crea parches de código (.patch files).
 
-bash
-Copiar
-Editar
+```bash
 git format-patch HEAD~1
 git apply archivo.patch
-🔹 git squash (no es un comando directo)
+```
+
+---
+
+## git squash (no es un comando directo)
 Combinar varios commits en uno usando rebase interactivo:
 
-bash
-Copiar
-Editar
+```bash
 git rebase -i HEAD~3
 # luego cambia "pick" por "squash" en los commits
-❌ NO EXISTE
-🔸 git download
+```
+
+---
+
+## ❌ No Existe
+
+### git download
 No existe como comando oficial. Generalmente se refiere a clonar o hacer fetch / pull.
 
-🧠 OTROS COMANDOS ÚTILES (adicionales)
-git clean -fd: borra archivos no rastreados.
+---
 
-git reflog: historial de movimientos del HEAD, útil para recuperar cambios.
+# 🧠 Otros Comandos Útiles
 
-✅ FLUJO DE TRABAJO RECOMENDADO
-bash
-Copiar
-Editar
+- `git clean -fd`: borra archivos no rastreados.
+- `git reflog`: historial de movimientos del HEAD, útil para recuperar cambios.
+
+---
+
+# ✅ Flujo de Trabajo Recomendado
+
+```bash
 # 1. Inicializas o clonas
 git init / git clone
 
@@ -256,3 +295,4 @@ git merge feature-x
 
 # 5. Subes cambios
 git push origin main
+```
